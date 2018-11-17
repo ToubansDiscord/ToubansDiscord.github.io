@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./lib/solarized-dark.css">
+        <script src="./lib/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <title>Tech - Toubans! Discord Version</title>
+    </head>
+    <body>
+        <header class="menu">
+            <span class="logo">
+                <img src="./img/Toubans_rg.png" width="60px" height="60px">
+            </span>
+            <span class="title">
+                Toubans! Discord Version
+            </span>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./tech.html">TECH</a></li>
+                    <li><a href="./story.html">STORY</a></li>
+                    <li class="rectlink"><a href="./usage.html">使い方</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>技術的な話</h1>
+            <p>Toubans! Discord Versionは、名前と機能を似せていますが、Toubans!本家とは仕組みが100%異なります。</p>
+            <p>
+                <img src="./img/tech.png">
+            </p>
+            <hr><br>
+            <h2>環境</h2>
+            <p>Toubans! 本家はPHPで動いていますが、私はPHPなどちんぷんかんぷんなので、Python 3.6.5(バージョン大事)で動かしています。</p>
+            <p>discord.pyというすばらしいBot Clientがあるので、それのrewriteバージョンを使っています。</p>
+            <p>Pythonを常時稼動するために、家のRaspberry Pi 3を使っています。</p>
+
+            <h2>設定画面</h2>
+            <p>LIFFに相当するものがないのは(GUIが作れないとして)難点でした。</p>
+            <p>そのかわり、LIFFを使わなくても<code>guild.id</code>(LINEのgroup idに相当)が取得できます。</p>
+            <p>設定は、チャット内でコマンドを送る(コマンドプロンプト好きならわかる)方法で行うことにしました。</p>
+            <p>設定はラズパイ内のjsonファイルに記録されています。</p>
+            <pre>
+                <code>
+@bot.command(name="設定A")
+async def config_a(ctx, v):
+    guild=ctx.message.channel.guild
+    config=_rjson()
+    config[str(guild.id)]["config_a"]=v
+    _wjson(config)
+    await ctx.send("設定しました!")
+                </code>
+            </pre>
+
+            <h2>通知</h2>
+            <p>通知はcreate_task内で無限ループをまわすという原始的な方法でやっています。</p>
+            <p>ほとんどがKenny2githubさん作。詳細はソースコードを!</p>
+
+            <h2>ソースコード</h2>
+            <p>GitHubにてMITライセンスで公開中。<a href="https://github.com/ToubansDiscord/ToubansDiscord">ToubansDiscord</a></p>
+
+            <h2>本家にない! Discord versionの自慢</h2>
+            <ol>
+                <li>Discordにメンション機能があるので、それを使える</li>
+                <li>設定変更役職を作って、当番設定を勝手に変えられないようにできる</li>
+                <li>絵文字入りヘルプメッセージ</li>
+                <li>必要なファイルは1ファイル(+トークンファイル)のみ</li>
+                <li>設定忘れを教えてくれる</li>
+                <li>ボットと友達になる手間が省ける</li>
+            </ol>
+            <footer>
+                <br>
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/">
+                        <img
+                            alt="クリエイティブ・コモンズ・ライセンス"
+                            style="border-width:0"
+                            src="./img/cc.png"
+                            width="100"
+                        >
+                    </a><br>
+                    <span
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        property="cc:attributionName"
+                    >
+                        apple502j
+                    </span>
+                    作『
+                    <span
+                        xmlns:dct="http://purl.org/dc/terms/"
+                        href="http://purl.org/dc/dcmitype/Text"
+                        property="dct:title"
+                        rel="dct:type"
+                    >
+                        Toubans! Discord Version ウェブサイト (Tech)
+                    </span>
+                    』は
+                    <a
+                        rel="license"
+                        href="http://creativecommons.org/licenses/by-sa/2.0/"
+                    >
+                        クリエイティブ・コモンズ 表示 - 継承 2.0 一般 ライセンス
+                    </a>
+                    で提供されています。
+                </div><br>
+                <p>
+                    ウェブサイト:<a href="https://github.io">GitHub Pages</a>
+                </p>
+                <p>Copyright © 2018 apple502j</p>
+                <p>Thanks to 西村惟 and Kenny2github</p>
+                <p>Syntax Highlighting using <a href="https://highlightjs.org/">highlight.js</a></p>
+            </footer>
+        </main>
+</body>
+</html>

@@ -109,3 +109,8 @@ footer {
     box-sizing: border-box;
     right:0px;
 }
+
+pre code {
+    text-align: left;
+    padding-left: 500px !important;
+}
