@@ -3,7 +3,6 @@ body {
 }
 
 html, body {
-    width: 100%;
     box-sizing: border-box;
 }
 
@@ -20,7 +19,6 @@ a:any-link {
     height: 100px;
     background-color: rgb(179, 96, 141);
     border: 0;
-    /*padding: 10px;*/
     margin: 0;
     z-index: 999;
 }
@@ -58,6 +56,4 @@ nav.navigation ul li a:any-link {
 main {
     position: relative;
     top: 120px;
-    /* overflow-x: hidden; */
-    width: 100%;
 }
