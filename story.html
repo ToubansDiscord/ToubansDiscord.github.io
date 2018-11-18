@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="icon" href="./favicon.ico">
+        <style>
+        article {
+            text-align: left;
+            width: 75%;
+            position: relative;
+            right: -15%;
+        }
+        main article > p {
+            text-indent: 2em;
+        }
+        </style>
+        <title>Story - Toubans! Discord Version</title>
+    </head>
+    <body>
+        <header class="menu">
+            <span class="logo">
+                <img src="./img/Toubans_rg.png" width="60px" height="60px">
+            </span>
+            <span class="title">
+                Toubans! Discord Version
+            </span>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./tech.html">TECH</a></li>
+                    <li><a href="./story.html">STORY</a></li>
+                    <li class="rectlink"><a href="./usage.html">使い方</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>開発秘話</h1>
+            <p>
+                <img
+                    src="./img/mitoujr.jpg"
+                    width="500px"
+                    height="auto"
+                >
+            </p>
+            <article>
+                <p>それは、2018年10月21日のことだった。人生初の東京旅に出たapple502jは、リクルートビルである未踏ジュニア発表会に向かっていた。本来の目的は三橋優希さんのUTIPSだった。</p>
+                <p>午後4時も過ぎたところ、西村惟さんの「Toubans!」が発表の場に立った。「LINEで当番Bot、すでに80名以上が使用」。これを聞いて驚くと同時に、なんでLINE、と思った。</p>
+                <hr>
+                <p>ここで補足をしておこう。LINEのアカウント登録には、携帯電話が必須だ。そんなもの持っていない。私はToubans!の発表をただ聞くだけになってしまった。</p>
+                <hr>
+                <p>発表の最中にもいくつか不思議な点を見つけた。「勝手にまわすのが問題なら、Toubans!でも勝手に設定を変えられるんじゃないの?」「さまざまな問題に、携帯電話を持っていない、は入らないの?」「配信停止も設定に入れないの?」</p>
+                <p>そして発表が終わって変えるときに、西村さんを呼んだ。「Discordに移植していいですか?」「いいですよ」これが私のBot開発の始まりだった。</p>
+                <p>開発は1ヶ月程度。その間に、西村さんは550万円を獲得。未踏ジュニアのスーパークリエイターに加え、LINE BOOT AWARDSにも出展していた。ただ、Discord版にも期待をしていたようだ。</p>
+                <hr>
+                <p>開発の中で、当番通知が登竜門であるのは、すでに承知だった。ただ、discord.pyはthreadingを許可しない。while Trueループでは複数guildに対応しない。ということで、開発メンバーを増やした。<a href="https://kenny2github.github.io">kenny2github</a>さんの助けがなければ、Toubans! Discord Versionは当番設定しかできないBotになっていた。</p>
+                <hr>
+                <p>ついにリリースのときが来た。BotはHerokuというよくわからんものを使うのは避けて、ラズパイで管理することにした。SQLにデータを保管してもいいが、jsonのほうが設定を手動変更しやすい。Toubans!は、Discordでの人生を歩むことになった。</p>
+            </article>
+            <footer>
+                <br>
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/">
+                        <img
+                            alt="クリエイティブ・コモンズ・ライセンス"
+                            style="border-width:0"
+                            src="./img/cc.png"
+                            width="100"
+                        >
+                    </a><br>
+                    <span
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        property="cc:attributionName"
+                    >
+                        apple502j
+                    </span>
+                    作『
+                    <span
+                        xmlns:dct="http://purl.org/dc/terms/"
+                        href="http://purl.org/dc/dcmitype/Text"
+                        property="dct:title"
+                        rel="dct:type"
+                    >
+                        Toubans! Discord Version ウェブサイト (Tech)
+                    </span>
+                    』は
+                    <a
+                        rel="license"
+                        href="http://creativecommons.org/licenses/by-sa/2.0/"
+                    >
+                        クリエイティブ・コモンズ 表示 - 継承 2.0 一般 ライセンス
+                    </a>
+                    で提供されています。
+                </div><br>
+                <p>
+                    ウェブサイト:<a href="https://github.io">GitHub Pages</a>
+                </p>
+                <p>Copyright © 2018 apple502j</p>
+                <p>Thanks to 西村惟 and Kenny2github</p>
+            </footer>
+        </main>
+</body>
+</html>

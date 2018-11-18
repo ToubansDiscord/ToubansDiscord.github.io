@@ -26,12 +26,16 @@ a:any-link {
 
 .menu * {
     position: relative;
-    margin: 20px;
+    margin: 20px 5px 20px 5px;
 }
 
 .menu .title {
     font-size: 45px;
     top: -30px;
+}
+
+.navigation {
+    float:right;
 }
 
 .navigation ul {
@@ -43,7 +47,8 @@ a:any-link {
 nav.navigation, .navigation ul li {
     display:inline-block;
     margin: 0;
-    top: -20px;
+    top: 5px;
+    margin-right: 20px;
 }
 
 .rectlink {
