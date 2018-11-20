@@ -61,7 +61,7 @@ nav.navigation ul li a:any-link {
 
 main {
     position: relative;
-    top: 120px;
+    top: 100px;
     text-align: center;
 }
 
@@ -118,4 +118,24 @@ footer {
 pre code {
     text-align: left;
     padding-left: 500px !important;
+}
+
+div.flash {
+    height: 80px;
+    font-size: 30px;
+    width: 100%;
+    margin: 0:
+}
+
+div.flash-warn {
+    background-color: rgb(179, 58, 42);
+}
+
+div.flash > p {
+    position: relative;
+    top: 10px;
+}
+
+div.flash > p a:any-link {
+    color:white;
 }
